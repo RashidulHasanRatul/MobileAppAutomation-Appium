@@ -17,6 +17,8 @@ public class CreateDriverSession {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1.0");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+        capabilities.setCapability("avd", "Pixel_4_API_27");
+        capabilities.setCapability("avdLaunchTimeout", "180000");
         String appUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator +"main"+File.separator+"resources"+File.separator+ "ApiDemos-debug.apk";
         capabilities.setCapability(MobileCapabilityType.APP, appUrl);
 
