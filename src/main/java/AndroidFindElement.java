@@ -1,20 +1,21 @@
-import io.appium.java_client.AppiumBy;
+
 import io.appium.java_client.AppiumDriver;
 
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.MobileElement;
+
 
 
 public class AndroidFindElement {
     public static void main(String[] args) throws Exception {
+
         AppiumDriver driver = CreateDriverSession.initializedDriver("Android");
 
-        WebElement element = driver.findElement(new AppiumBy.ByAccessibilityId("Access'ibility"));
-       // element.click();
-        System.out.println(element.getText());
+        MobileElement myElement = (MobileElement) driver.findElementByAccessibilityId("Accessibility");
+        System.out.println(myElement.getText());
 
 
-
-
+        myElement = (MobileElement) driver.findElementsById("android:id/text1").get(1);
+        System.out.println(myElement.getText());
 
     }
 }

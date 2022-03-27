@@ -12,8 +12,7 @@ import java.net.URL;
 public class CreateDriverSession {
 
 
-
-    public static AppiumDriver initializedDriver (String PlatformName) throws Exception {
+    public static AppiumDriver initializedDriver(String PlatformName) throws Exception {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, PlatformName);
