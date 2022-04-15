@@ -2,6 +2,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -58,6 +59,14 @@ public class swipe {
         driver.navigate().back();
         driver.findElement(views).click();
         TouchAction t4 = new TouchAction(driver);
+
+        By grid = MobileBy.AccessibilityId("Grid");
+        By annimation = MobileBy.AccessibilityId("Animation");
+        t4.press(ElementOption.element(driver.findElement(grid)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
+                .moveTo(ElementOption.element(driver.findElement(annimation)))
+                .release()
+                .perform();
 
     }
 }
