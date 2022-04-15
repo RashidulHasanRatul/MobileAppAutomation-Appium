@@ -29,6 +29,8 @@ public class CreateDriverSession {
                 capabilities.setCapability("avdLaunchTimeout", "180000");
                 String AndroidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "ApiDemos-debug.apk";
                 capabilities.setCapability(MobileCapabilityType.APP, AndroidAppUrl);
+                capabilities.setCapability("unlockType", "pin");
+                capabilities.setCapability("unlockKey", "1234");
                 return new AndroidDriver(url, capabilities);
 
             case "iOS":
