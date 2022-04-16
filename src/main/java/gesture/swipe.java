@@ -1,7 +1,11 @@
+package gesture;
+
+import driver_session.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -41,7 +45,7 @@ public class swipe {
                 .moveTo(PointOption.point(endx, endy))
                 .release()
                 .perform();
-        // swipe multiple times for reaching the end of the list
+        // gesture.swipe multiple times for reaching the end of the list
         driver.navigate().back();
         driver.findElement(views).click();
         TouchAction t3 = new TouchAction(driver);
@@ -54,10 +58,18 @@ public class swipe {
                     .perform();
         }
 
-        // swipe one element to another element
+        // gesture.swipe one element to another element
         driver.navigate().back();
         driver.findElement(views).click();
         TouchAction t4 = new TouchAction(driver);
+
+        By grid = MobileBy.AccessibilityId("Grid");
+        By annimation = MobileBy.AccessibilityId("Animation");
+        t4.press(ElementOption.element(driver.findElement(grid)))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
+                .moveTo(ElementOption.element(driver.findElement(annimation)))
+                .release()
+                .perform();
 
     }
 }
