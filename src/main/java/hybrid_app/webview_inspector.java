@@ -40,5 +40,6 @@ public class webview_inspector {
 
         // click on webview
         driver.findElement(webView).click();
+        System.out.println(driver.findElement(MobileBy.xpath("//android.webkit.Webview/android.view.View[1]")).getText());
     }
 }
