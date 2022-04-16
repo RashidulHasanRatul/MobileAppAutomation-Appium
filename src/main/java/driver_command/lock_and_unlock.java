@@ -1,3 +1,6 @@
+package driver_command;
+
+import driver_session.CreateDriverSession;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -5,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class lock_and_unlock {
     public static void main(String[] args) throws Exception {
+
         MobileDriver driver = CreateDriverSession.initializedDriver("Android");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // with out Lock

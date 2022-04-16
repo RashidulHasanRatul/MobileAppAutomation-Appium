@@ -1,3 +1,6 @@
+package gesture;
+
+import driver_session.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;

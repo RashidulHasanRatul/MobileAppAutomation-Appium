@@ -1,3 +1,6 @@
+package gesture;
+
+import driver_session.CreateDriverSession;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
@@ -42,7 +45,7 @@ public class swipe {
                 .moveTo(PointOption.point(endx, endy))
                 .release()
                 .perform();
-        // swipe multiple times for reaching the end of the list
+        // gesture.swipe multiple times for reaching the end of the list
         driver.navigate().back();
         driver.findElement(views).click();
         TouchAction t3 = new TouchAction(driver);
@@ -55,7 +58,7 @@ public class swipe {
                     .perform();
         }
 
-        // swipe one element to another element
+        // gesture.swipe one element to another element
         driver.navigate().back();
         driver.findElement(views).click();
         TouchAction t4 = new TouchAction(driver);
